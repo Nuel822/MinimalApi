@@ -41,7 +41,7 @@ app.MapGet("api/v1/getProductById/{id}", async(int id, IProductRepository produc
     if(product == null)
      return Results.NotFound();
 
-    return Results.Created($"/todoitems/{product.Id}",product);
+    return Results.Ok(product);
 });
 
 app.Run();
